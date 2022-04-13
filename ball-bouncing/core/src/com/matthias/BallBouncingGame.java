@@ -1,13 +1,11 @@
 package com.matthias;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.utils.ScreenUtils;
 
-public class BallBouncing extends Game {
+public class BallBouncingGame extends Game {
 
 	SpriteBatch batch;
 	BitmapFont font;
@@ -18,7 +16,7 @@ public class BallBouncing extends Game {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
 		shapeRenderer = new ShapeRenderer();
-		setScreen(new TitleScreen(this));
+		setScreen(new GameTitleScreen(this));
 	}
 
 	@Override

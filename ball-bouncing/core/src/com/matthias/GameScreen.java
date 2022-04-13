@@ -13,8 +13,7 @@ import static com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType.Filled;
 
 public class GameScreen extends ScreenAdapter {
 
-    BallBouncing game;
-
+    BallBouncingGame game;
     Circle ball;
 
     float xVel;
@@ -22,7 +21,7 @@ public class GameScreen extends ScreenAdapter {
 
     int bounces;
 
-    public GameScreen(BallBouncing ballBouncing) {
+    public GameScreen(BallBouncingGame ballBouncing) {
         this.game = ballBouncing;
     }
 

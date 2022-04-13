@@ -1,37 +1,40 @@
 package com.matthias;
 
-import com.badlogic.gdx.*;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+import static com.badlogic.gdx.Input.Keys.SPACE;
 import static com.badlogic.gdx.graphics.Color.BLACK;
 import static com.badlogic.gdx.graphics.Color.WHITE;
 import static com.badlogic.gdx.utils.Align.center;
-import static java.lang.String.format;
 
-public class GameOverScreen extends ScreenAdapter {
+public class GameTitleScreen extends ScreenAdapter {
 
     private final BallBouncingGame game;
-    private final GlyphLayout gameOverText;
+    private final GlyphLayout gameTitleText;
 
-    private final InputProcessor gameOverScreenInputProcessor = new InputAdapter() {
+    private final InputProcessor titleScreenInputProcessor = new InputAdapter() {
         @Override
         public boolean keyDown(int keycode) {
-            if (keycode == Input.Keys.SPACE) {
+            if (keycode == SPACE) {
                 game.setScreen(new GameScreen(game));
             }
             return true;
         }
     };
 
-    public GameOverScreen(BallBouncingGame game, int score) {
+    public GameTitleScreen(BallBouncingGame game) {
         this.game = game;
-        gameOverText = new GlyphLayout(this.game.font, format("Game Over%nYour Score: %d%nPress SPACE to Play Again", score), WHITE, 0, center, false);
+        gameTitleText = new GlyphLayout(this.game.font, "Bouncing Ball Game\nPress SPACE to Start", WHITE, 0, center, false);
     }
 
     @Override
     public void show() {
-        Gdx.input.setInputProcessor(gameOverScreenInputProcessor);
+        Gdx.input.setInputProcessor(titleScreenInputProcessor);
     }
 
     @Override
@@ -39,7 +42,7 @@ public class GameOverScreen extends ScreenAdapter {
         ScreenUtils.clear(BLACK);
 
         game.batch.begin();
-        drawGameOverText();
+        drawTitleText();
         game.batch.end();
     }
 
@@ -48,9 +51,9 @@ public class GameOverScreen extends ScreenAdapter {
         Gdx.input.setInputProcessor(null);
     }
 
-    private void drawGameOverText() {
+    private void drawTitleText() {
         float screenCenterX = Gdx.graphics.getWidth() / 2f;
         float screenCenterY = Gdx.graphics.getHeight() / 2f;
-        game.font.draw(game.batch, gameOverText, screenCenterX, screenCenterY + gameOverText.height / 2);
+        game.font.draw(game.batch, gameTitleText, screenCenterX, screenCenterY + gameTitleText.height / 2);
     }
 }
