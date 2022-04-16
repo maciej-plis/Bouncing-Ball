@@ -10,6 +10,6 @@ object DesktopLauncher {
         val config = Lwjgl3ApplicationConfiguration()
         config.setForegroundFPS(60)
         config.setWindowedMode(800, 1000)
-        Lwjgl3Application(BallBouncingGame(), config)
+        Lwjgl3Application(BouncingBallGame(), config)
     }
 }

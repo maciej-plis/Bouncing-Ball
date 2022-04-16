@@ -11,7 +11,7 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.ScreenUtils
 
-class GameScreen(private val game: BallBouncingGame) : ScreenAdapter() {
+class GameScreen(private val game: BouncingBallGame) : ScreenAdapter() {
 
     private val ball: Ball = Ball(
             Vector2(Gdx.graphics.screenCenterX, Gdx.graphics.screenCenterY),

@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.ScreenUtils
 
-class GameTitleScreen(private val game: BallBouncingGame) : ScreenAdapter() {
+class GameTitleScreen(private val game: BouncingBallGame) : ScreenAdapter() {
 
     private val gameTitleText: GlyphLayout = GlyphLayout(game.font, "Bouncing Ball Game\nPress SPACE to Start", Color.WHITE, 0f, Align.center, false)
     private val titleScreenInputProcessor: InputProcessor = object : InputAdapter() {

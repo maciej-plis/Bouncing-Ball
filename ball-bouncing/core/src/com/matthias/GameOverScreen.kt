@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.ScreenUtils
 
-class GameOverScreen(private val game: BallBouncingGame, score: Int) : ScreenAdapter() {
+class GameOverScreen(private val game: BouncingBallGame, score: Int) : ScreenAdapter() {
 
     private val gameOverText: GlyphLayout = GlyphLayout(game.font, String.format("Game Over%nYour Score: %d%nPress SPACE to Play Again", score), Color.WHITE, 0f, Align.center, false)
     private val gameOverScreenInputProcessor: InputProcessor = object : InputAdapter() {
