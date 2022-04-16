@@ -35,8 +35,6 @@ class GameTitleScreen(private val game: BallBouncingGame) : ScreenAdapter() {
     }
 
     private fun drawTitleText() {
-        val screenCenterX = Gdx.graphics.width / 2f
-        val screenCenterY = Gdx.graphics.height / 2f
-        game.font.draw(game.batch, gameTitleText, screenCenterX, screenCenterY + gameTitleText.height / 2)
+        game.font.draw(game.batch, gameTitleText, Gdx.graphics.screenCenterX, Gdx.graphics.screenCenterY + gameTitleText.height / 2)
     }
 }

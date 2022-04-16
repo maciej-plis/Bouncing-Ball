@@ -35,8 +35,6 @@ class GameOverScreen(private val game: BallBouncingGame, score: Int) : ScreenAda
     }
 
     private fun drawGameOverText() {
-        val screenCenterX = Gdx.graphics.width / 2f
-        val screenCenterY = Gdx.graphics.height / 2f
-        game.font.draw(game.batch, gameOverText, screenCenterX, screenCenterY + gameOverText.height / 2)
+        game.font.draw(game.batch, gameOverText, Gdx.graphics.screenCenterX, Gdx.graphics.screenCenterY + gameOverText.height / 2)
     }
 }

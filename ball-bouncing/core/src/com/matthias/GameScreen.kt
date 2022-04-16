@@ -14,7 +14,7 @@ import com.badlogic.gdx.utils.ScreenUtils
 class GameScreen(private val game: BallBouncingGame) : ScreenAdapter() {
 
     private val ball: Ball = Ball(
-            Vector2(Gdx.graphics.width / 2f, Gdx.graphics.height / 2f),
+            Vector2(Gdx.graphics.screenCenterX, Gdx.graphics.screenCenterY),
             65f,
             Color.PURPLE,
             GlyphLayout(game.font, "Hello World!", Color.WHITE, 0f, Align.center, false)
